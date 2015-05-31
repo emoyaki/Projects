@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <script>
+        $(document).ready(function(){
+            $.get('xml/statistics.xml', function(load) {
+                $(load).find('web_project').each(function () {
+                    var $project = $(this);
+                    var name = $project.find('name').text();
+                    var description = $project.find('description').text();
+                    var image = $project.find('image').text();
+                    $('.websites_container').append(image);
+                    $('.websites_name_content').append('<h1 class="name_website text-center">' + name + '</h1>');
+                    $('.websites_description_content').append('<p class="description_website text-center">' + description + '</p>');
+                });
+                $(load).find('card_project').each(function () {
+                    var $project = $(this);
+                    var name = $project.find('name').text();
+                    var description = $project.find('description').text();
+                    var image = $project.find('image').text();
+                    /// $('.business_cards_container').append('<h1 class="name_website text-center">' + name + '</h1>');
+                    ///$('.business_cards_container').append(image);
+                    /// $('.business_cards_container').append('<p class="description_website text-center">' + description + '</div>');
+                });
+
+                $(load).find('poster_project').each(function () {
+                    var $project = $(this);
+                    var name = $project.find('name').text();
+                    var description = $project.find('description').text();
+                    var image = $project.find('image').text();
+                    /// $('.posters_container').append('<h1 class="name_website text-center">' + name + '</h1>');
+                    /// $('.posters_container').append(image);
+                    /// $('.posters_container').append('<p class="description_website text-center">' + description + '</div>');
+                });
+                $(load).find('flayer_project').each(function () {
+                    var $project = $(this);
+                    var name = $project.find('name').text();
+                    var description = $project.find('description').text();
+                    var image = $project.find('image').text();
+                    /// $('.flayers_container').append('<h1 class="name_website text-center">' + name + '</h1>');
+                    // $('.flayers_container').append(image);
+                    /// $('.flayers_container').append('<p class="description_website text-center">' + description + '</div>');
+                });
+                ///Gallery///
+                var img_web_content = $('.websites_container img');
+                var img_web_content_length = $('.websites_container img').length;
+                var img_content = $('.image_content');
+
+                img_content.hide().addClass('small_img');
+                img_web_content.eq(7).prevAll().show().addClass('visible').removeClass('invisible');
+                img_web_content.not('.visible').addClass('invisible');
+
+                var web_img_visible_length = $('.visible').length;
+                var web_img_visible_middle_value = web_img_visible_length / 2;
+                var web_img_visible_middle = web_img_visible_middle_value.toFixed() - 1;
+
+                $('.visible').eq(web_img_visible_middle).addClass('active_img').removeClass('small_img').removeClass('side_img');
+                $('.active_img').next().addClass('side_img').removeClass('small_img');
+                $('.active_img').prev().addClass('side_img').removeClass('small_img');
+
+                $('.button_next').on('click',function(){
+                    var web_img_visible_active_index = $('.active_img').index();
+                    var web_img_visible_active_index_plus = $('.active_img').index() + 1;
+                    var web_img_last_visible = $('.visible').last().index();
+                    var web_img_visible_length = $('.visible').length;
+
+                    img_web_content.eq(web_img_visible_active_index).prevAll().addClass('small_img');
+                    img_web_content.eq(web_img_visible_active_index).nextAll().addClass('small_img');
+
+                    $('.active_img').prev().removeClass('side_img').addClass('small_img');
+                    $('.active_img').removeClass('active_img').addClass("side_img").next().addClass('active_img').removeClass('side_img').removeClass('small_img');
+                    $('.active_img').next().addClass('side_img').removeClass('small_img');
+                    $('.active_img').prev().addClass('side_img').removeClass('small_img');
+
+                    if(web_img_visible_active_index == web_img_last_visible){
+                        $('.websites_container').effect('slide',{direction:'left',mode:'hide'}).after(
+                                $('.websites_container').effect('slide',{direction:'right',mode:'show'})
+                        );
+
+                        $('.visible').removeClass('visible');
+                        $('.invisible').addClass('visible').removeClass('invisible').show();
+                        img_web_content.not('.visible').hide()
+                    };
+
+                   if(web_img_visible_length > 6){
+                       $('.visible').eq(6).nextAll().removeClass('visible').addClass('invisible').hide();
+                   };
+
+                    if(web_img_visible_active_index_plus == img_web_content_length){
+                        img_content.hide().addClass('small_img');
+                        img_web_content.eq(7).prevAll().show(0).addClass('visible').removeClass('invisible');
+                        img_web_content.not('.visible').addClass('invisible');
+                        $('.visible').eq(0).addClass('active_img').removeClass('small_img').removeClass('side_img');
+                        $('.active_img').next().addClass('side_img').removeClass('small_img');
+                        $('.active_img').prev().addClass('side_img').removeClass('small_img');
+
+                    };
+                });
+                $('.button_prev').on('click',function(){
+                    var web_img_visible_active_index = $('.active_img').index();
+                    var web_img_first_visible = $('.visible').first().index();
+
+
+                    var web_img_last_image = img_web_content.eq(img_web_content_length - 1);
+
+                    img_web_content.eq(web_img_visible_active_index).prevAll().addClass('small_img');
+                    img_web_content.eq(web_img_visible_active_index).nextAll().addClass('small_img');
+
+                    $('.active_img').next().removeClass('side_img').addClass('small_img');
+                    $('.active_img').removeClass('active_img').addClass("side_img").prev().addClass('active_img').removeClass('side_img').removeClass('small_img');
+                    $('.active_img').next().addClass('side_img').removeClass('small_img');
+                    $('.active_img').prev().addClass('side_img').removeClass('small_img');
+
+                    if(web_img_visible_active_index == web_img_first_visible && web_img_visible_active_index !== 0){
+                       $('.websites_container').effect('slide',{direction:'right',mode:'hide'}).after(
+                              $('.websites_container').effect('slide',{direction:'left',mode:'show'})
+                       );
+                        $('.visible').removeClass('visible');
+                        img_web_content.not('.visible').hide();
+                        $('.invisible').slice(-7).addClass('visible').removeClass('invisible').show();
+
+                    }
+                    if (web_img_visible_active_index == 0){
+                        web_img_last_image.addClass('active_img').removeClass('small_img').prev().addClass('side_img').removeClass('small_img');
+                        $('.websites_container').effect('slide',{direction:'right',mode:'hide'}).after(
+                                $('.websites_container').effect('slide',{direction:'left',mode:'show'})
+                        );
+                        $('.visible').removeClass('visible');
+                        img_web_content.not('.visible').addClass('invisible').hide();
+                        $('.invisible').slice(-7).addClass('visible').removeClass('invisible').show();
+                    }
+                });
+            });
+        });
+
+
+    </script>
+</head>
+<body>
+    <div class="content_sub_portfolio">
+        <button class="btn-danger col-md-1 col-md-offset-1 button_prev">Prev</button>
+        <div class="websites_container text-center  col-md-11"></div>
+        <button class="btn-danger col-md-1 button_next">Next</button>
+
+
+        <div class="row"></div>
+        <div class="websites_container_description">
+            <div class="websites_name_content"></div>
+            <div class="websites_description_content"></div>
+        </div>
+        <div class="business_cards_container"></div>
+        <div class="posters_container"></div>
+        <div class="flayers_container"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <script>
+        $.get('xml/statistics.xml', function(load){
+            var website_counter = $(load).find('web_project').length;
+
+            var business_card_counter = $(load).find('card_project').length;
+            var poster_counter = $(load).find('poster_project').length;
+            var flayers_counter = $(load).find('flayer_project').length;
+
+            $('.websites_counter').append("Websites <br>" + "<p class='websites_number'>" + website_counter +"</p>");
+            $('.business_cards_counter').append("Business cards <br>" + "<p class='business_number'>" + business_card_counter +"</p>");
+            $('.posters_counter').append("Posters <br>" +  "<p class='posters_number'>" + poster_counter + "</p>");
+            $('.flayers_counter').append("Flayers <br>" + "<p class='flayers_number'>" + flayers_counter + "</p>");
+            var multiply = 100;
+            if (website_counter > 10 || business_card_counter > 10 || poster_counter > 10 || flayers_counter > 10 ){
+                multiply = 20;
+            }
+             if (website_counter > 50 || business_card_counter > 50 || poster_counter > 50 || flayers_counter > 50 ){
+                multiply = 5;
+            }
+            if( website_counter > 100 || business_card_counter > 100 || poster_counter > 100 || flayers_counter > 100 ){
+                multiply = 2;
+            }
+
+            if (  website_counter > 400 || business_card_counter > 400 || poster_counter > 400 || flayers_counter > 400){
+                multiply = 0.5;
+            }
+            var websites_height = website_counter * multiply;
+            var business_cards_height =  business_card_counter * multiply;
+            var poster_height = poster_counter * multiply;
+            var flayers_height = flayers_counter * multiply;
+                $('.websites').css({
+                    'background-color': '#f1c40f',
+                    'height': "0",
+                    'width': '50px'
+                }).animate({height: websites_height + "px"});
+                $('.business_cards').css({
+                    'background-color': '#3498db',
+                    'height': "0",
+                    'width': '50px'
+                }).animate({height: business_cards_height + "px"});
+                $('.posters').css({
+                    'background-color': '#9b59b6',
+                    'height': "0",
+                    'width': '50px'
+                }).animate({height: poster_height + "px"});;
+                $('.flayers').css({
+                    'background-color': '#1abc9c',
+                    'height': "0",
+                    'width': '50px'
+                }).animate({height: flayers_height + "px"});
+        });
+    </script>
+</head>
+<body>
+    <div class="sub_container">
+        <h1 class="text-center test">Our statistics</h1>
+        <div class="statistics col-md-2">
+            <ul>
+            <li class="websites_counter text-center"></li>
+            <li class="business_cards_counter text-center"></li>
+            <li class="posters_counter text-center"></li>
+            <li class="flayers_counter text-center"></li>
+            </ul>
+        </div>
+        <div class="counter">
+            <div class="websites col-md-offset-1"></div>
+            <div class="business_cards col-md-offset-2"></div>
+            <div class="posters col-md-offset-2"></div>
+            <div class="flayers col-md-offset-2"></div>
+        </div>
+        </div>
+
+
+
+
+</body>
+</html>

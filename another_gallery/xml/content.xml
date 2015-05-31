@@ -1,0 +1,54 @@
+<content>
+///////////////Websites//////////////
+        <slide>
+            <name>This is image 1</name>
+            <image><![CDATA[<img class="img-rectangular image_content img-thumbnail" src="ajax/resourses/img_1.jpg">]]></image>
+            <description>This is the description.....1</description>
+        </slide>
+        <slide>
+            <name>This is image 2</name>
+            <image><![CDATA[<img class=" image_content img-thumbnail img-rectangular   " src="ajax/resourses/img_2.jpg">]]></image>
+            <description>This is the description.....2</description>
+        </slide>
+        <slide>
+            <name>This is image 3</name>
+            <image><![CDATA[<img class=" image_content img-thumbnail img-rectangular " src="ajax/resourses/img_3.jpg">]]></image>
+            <description>This is the description....3</description>
+        </slide>
+         <slide>
+            <name>This is image 4</name>
+            <image><![CDATA[<img class=" image_content img-thumbnail img-rectangular" src="ajax/resourses/img_4.jpg">]]></image>
+            <description>This is the description.....4</description>
+        </slide>
+        <slide>
+            <name>This is image 5</name>
+            <image><![CDATA[<img class=" image_content img-thumbnail img-rectangular  " src="ajax/resourses/img_5.jpg">]]></image>
+            <description>This is the description.....5</description>
+        </slide>
+        <slide>
+            <name>This is image 6</name>
+            <image><![CDATA[<img class=" image_content img-thumbnail img-rectangular " src="ajax/resourses/img_6.jpg">]]></image>
+            <description>This is the description.....6</description>
+        </slide>
+        <slide>
+            <name>This is image 7</name>
+            <image><![CDATA[<img class=" image_content img-thumbnail img-rectangular  " src="ajax/resourses/img_7.jpg">]]></image>
+            <description>This is the description.....7</description>
+         </slide>
+    <slide>
+        <name>This is image 8</name>
+        <image><![CDATA[<img class="img-rectangular image_content img-thumbnail " src="ajax/resourses/img_8.jpg">]]></image>
+        <description>This is the description.....7</description>
+    </slide>
+    <slide>
+        <name>This is image 9</name>
+        <image><![CDATA[<img class="img-rectangular image_content img-thumbnail  " src="ajax/resourses/img_9.jpg">]]></image>
+        <description>This is the description.....7</description>
+    </slide>
+    <slide>
+        <name>This is image 10</name>
+        <image><![CDATA[<img class="img-rectangular image_content img-thumbnail  " src="ajax/resourses/img_10.jpg">]]></image>
+        <description>This is the description.....7</description>
+    </slide>
+
+</content>

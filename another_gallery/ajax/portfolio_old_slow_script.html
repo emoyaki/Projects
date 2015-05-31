@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <script>
+        $.get('xml/statistics.xml', function(load) {
+
+
+            $(load).find('web_project').each(function () {
+                var $project = $(this);
+                var name = $project.find('name').text();
+                var description = $project.find('description').text();
+                var image = $project.find('image').text();
+                $('.websites_container').append(image);
+                $('.websites_name_content').append('<h1 class="name_website text-center">' + name + '</h1>');
+                $('.websites_description_content').append('<p class="description_website text-center">' + description + '</p>');
+            });
+            $(load).find('card_project').each(function () {
+                var $project = $(this);
+                var name = $project.find('name').text();
+                var description = $project.find('description').text();
+                var image = $project.find('image').text();
+                /// $('.business_cards_container').append('<h1 class="name_website text-center">' + name + '</h1>');
+                ///$('.business_cards_container').append(image);
+                /// $('.business_cards_container').append('<p class="description_website text-center">' + description + '</div>');
+            });
+
+            $(load).find('poster_project').each(function () {
+                var $project = $(this);
+                var name = $project.find('name').text();
+                var description = $project.find('description').text();
+                var image = $project.find('image').text();
+                /// $('.posters_container').append('<h1 class="name_website text-center">' + name + '</h1>');
+               /// $('.posters_container').append(image);
+                /// $('.posters_container').append('<p class="description_website text-center">' + description + '</div>');
+            });
+            $(load).find('flayer_project').each(function () {
+                var $project = $(this);
+                var name = $project.find('name').text();
+                var description = $project.find('description').text();
+                var image = $project.find('image').text();
+                /// $('.flayers_container').append('<h1 class="name_website text-center">' + name + '</h1>');
+               // $('.flayers_container').append(image);
+                /// $('.flayers_container').append('<p class="description_website text-center">' + description + '</div>');
+            });
+            ///Gallery///
+            var img_content =  $('.image_content');
+            var img_content_active = $('.image_content.active_img');
+            var img_content_active_index = img_content_active.index() - 1;
+
+
+            img_content_active.next().addClass('side');
+            img_content_active.prev().addClass('side');
+
+            $('.image_content.side:first').prevAll().addClass('small');
+            $('.image_content.side:last').nextAll().addClass('small');
+
+            var img_content_side = $('.image_content.side');
+            var img_content_small = $('.image_content.small');
+            var img_websites_length = $('.websites_container img').length;
+            var name_container_websites = $('.name_website');
+            var description_container_websites = $('.description_website');
+            $('.name_website').hide();
+            $('.description_website').hide();
+            $(name_container_websites.eq(img_content_active_index)).show();
+            $(description_container_websites.eq(img_content_active_index)).show();
+
+            $(img_content_active).show();
+            $(img_content_side).show();
+            $(img_content_small).show();
+
+            if (img_websites_length > 7){
+                var img_websites_container = $('.websites_container img').eq(7);
+                img_websites_container.nextAll().hide();
+
+                }
+
+            $('.button').on('click',function(){
+                var img_websites = $('.websites_container img');
+                var img_websites_length = $('.websites_container img').length;
+                var img_content_active = $('.active_img').index();
+                var img_content_active_minus = $('.active_img').prev().index();
+                var image_class_active = $('.active_img');
+                var img_websites_visible = $('.websites_container img.visible');
+                var img_websites_invisible = $('.websites_container img.invisible');
+
+            if(img_content_active < img_websites_length){
+
+                $('.active_img').prev().removeClass('side').addClass('small');
+                $('.active_img').addClass('side').removeClass('active_img').next().addClass('active_img').removeClass('small').removeClass('side').next().removeClass('small').addClass('side');
+                $('.name_website:eq('+img_content_active_minus +')').hide();
+                $('.description_website:eq('+img_content_active_minus +')').hide();
+                $('.name_website:eq('+img_content_active+')').show();
+                $('.description_website:eq('+img_content_active+')').show();
+
+
+                if (img_websites_length > 7 && img_content_active > 6){
+                    var image_class_active_show = image_class_active.next().index();
+                    img_websites_visible.first().removeClass('visible').addClass('invisible').hide();
+                    image_class_active.show().addClass('visible').removeClass('invisible');
+                    img_websites.eq(image_class_active_show).show().addClass('visible').removeClass('invisible');
+                }
+            }
+            else{
+                $('.active_img').removeClass("active_img").addClass('small').prev().removeClass('side').addClass('small');
+                $(img_websites.eq(0)).addClass('active_img').removeClass('small');
+                $('.name_website').last().hide();
+                $('.description_website').last().hide();
+                $('.description_website').first().show();
+                $('.name_website').first().show();
+                img_websites_visible.hide().removeClass('visible');
+                img_websites_invisible.first().next().removeClass('small').addClass('side');
+                img_websites_invisible.eq(8).prevAll().show().removeClass('invisible').addClass('visible');
+
+
+                //var img_visible_last = img_websites_visible.last();
+               // img_websites_visible.first().hide().removeClass('visible').addClass('invisible');
+                //img_websites_invisible.first().show().addClass('visible').removeClass('invisible').insertAfter(img_visible_last);
+               // img_websites_invisible.eq(8).prevAll().show().removeClass('invisible').addClass('visible').insertAfter(img_visible_last);
+
+
+            }
+                });
+            $('.button2').on('click',function(){
+                var img_websites = $('.websites_container img');
+                var img_websites_length = $('.websites_container img').length;
+                var img_content_active = $('.active_img').index();
+                var img_content_active_minus = $('.active_img').prev().index();
+                var img_content_fix = $('.active_img').index() - 2;
+            if(img_content_active > 1){
+                $('.active_img').next().removeClass('side').addClass('small');
+                $('.active_img').addClass('side').removeClass('active_img').prev().addClass('active_img').removeClass('small').removeClass('side').prev().removeClass('small').addClass('side');
+
+                $('.name_website:eq('+img_content_active_minus +')').hide();
+                $('.name_website:eq('+img_content_fix+')').show();
+                $('.description_website:eq('+img_content_active_minus +')').hide();
+                $('.description_website:eq('+img_content_fix+')').show();
+            }
+            else{
+                $('.active_img').removeClass("active_img").addClass('small').next().removeClass('side').addClass('small');
+                $(img_websites.last()).addClass('active_img').removeClass('small');
+                $('.name_website').first().hide();
+                $('.description_website').first().hide();
+                $('.description_website').last().show();
+                $('.name_website').last().show();
+
+            }
+            });
+        });
+
+
+
+    </script>
+</head>
+<body>
+    <div class="content_sub_portfolio">
+        <button class="btn-danger button2">Prev</button>
+        <button class="btn-danger button">Next</button>
+        <div class="websites_container"><div></div></div>
+        <div class="websites_container_description">
+            <div class="websites_name_content"><div></div></div>
+            <div class="websites_description_content"><div></div></div>
+        </div>
+        <div class="business_cards_container"></div>
+        <div class="posters_container"></div>
+        <div class="flayers_container"></div>
+    </div>
+</body>
+</html>
