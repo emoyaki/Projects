@@ -1,0 +1,221 @@
+@import url(http://fonts.googleapis.com/css?family=Pacifico);
+@import url(http://fonts.googleapis.com/css?family=Lora:700);
+
+body {
+    background-color: #222222;
+    background: repeating-linear-gradient(45deg, #2b2b2b 0%, #2b2b2b 10%, #222222 0%, #222222 50%) 0 / 15px 15px;
+}
+
+/* Menu */
+.menu {
+    z-index: 9998;
+    height: 100%;
+    display: none;
+    list-style: none;
+    font-family: 'Pacifico', cursive;
+    color: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    padding-top: 40px;
+    padding-left: 0;
+    background-color: rgba(0, 0, 0, 1);
+    width: 7%;
+    margin-top: 1px;
+}
+
+.menu li {
+    padding: 10px 0 10px 10px;
+    margin-top: 20px;
+}
+
+/* ICONS */
+.nature:before {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-left: 14px;
+    background: url("resources/icons/tree.svg") no-repeat 0 0;
+    content: "";
+    background-size: 100%;
+}
+
+.beaches:before {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-left: 14px;
+    background: url("resources/icons/beach.svg") no-repeat 0 0;
+    content: "";
+    background-size: 100%;
+}
+
+.animals:before {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-left: 14px;
+    background: url("resources/icons/animals.svg") no-repeat 0 0;
+    content: "";
+    background-size: 100%;
+}
+
+.menu li:hover {
+    background: -webkit-linear-gradient(#4da8c7, #0789a9);
+    background: -o-linear-gradient(#4da8c7, #0789a9);
+    background: -moz-linear-gradient(#4da8c7, #0789a9);
+    background: linear-gradient(#4da8c7, #0789a9);
+}
+
+/*Buttons*/
+
+@media (max-width:960px) {
+    .top_button {
+        z-index: 99999;
+        font-size: 20px;
+        position: absolute;
+        color: rgba(255, 255, 255, 0.7);
+        height: 12%;
+        width: 7%;
+        padding-top: 1%;
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+    .left_button {
+        z-index: 9998;
+        font-size: 25px;
+        position: absolute;
+        padding-top: 140px;
+        padding-left: 5px;
+        color: rgba(255, 255, 255, 0.7);
+        background-color: rgba(0, 0, 0, 0.5);
+        height: 100%;
+        width: 7%;
+    }
+
+    .right_button {
+        z-index: 9998;
+        font-size: 25px;
+        position: absolute;
+        right: 0;
+        padding-top: 140px;
+        padding-left: 5px;
+        color: rgba(255, 255, 255, 0.7);
+        background-color: rgba(0, 0, 0, 0.5);
+        height: 100%;
+        width: 7%;
+    }
+    .menu li {
+        font-size:10px;
+        padding: 5px 0 5px 5px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .nature:before,.beaches:before,.animals:before  {
+        width: 10px;
+        height: 10px;
+        margin-left:12px;
+        padding:0;
+    }
+
+}
+@media (min-width:960px) {
+    .top_button {
+        z-index: 99999;
+        font-size: 20px;
+        position: absolute;
+        color: rgba(255, 255, 255, 0.7);
+        height: 15%;
+        width: 7%;
+        padding-top: 1%;
+        padding-left: 2.5%;
+        padding-right: 2.5%
+    }
+    .left_button {
+        z-index: 9998;
+        font-size: 25px;
+        position: absolute;
+        padding-top: 140px;
+        padding-left: 20px;
+        color: rgba(255, 255, 255, 0.7);
+        background-color: rgba(0, 0, 0, 0.5);
+        height: 100%;
+        width: 7%;
+    }
+
+    .right_button {
+        z-index: 9998;
+        font-size: 25px;
+        position: absolute;
+        right: 0;
+        padding-top: 140px;
+        padding-left: 20px;
+        color: rgba(255, 255, 255, 0.7);
+        background-color: rgba(0, 0, 0, 0.5);
+        height: 100%;
+        width: 7%;
+    }
+}
+
+
+.top_button:hover {
+    color: rgba(255, 255, 255, 1);
+    background: -webkit-linear-gradient(#4da8c7, #0789a9);
+    background: -o-linear-gradient(#4da8c7, #0789a9);
+    background: -moz-linear-gradient(#4da8c7, #0789a9);
+    background: linear-gradient(#4da8c7, #0789a9);
+
+}
+
+.left_button:hover {
+    color: rgba(77, 168, 199, 1);
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.right_button:hover {
+    color: rgba(77, 168, 199, 1);
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/*Gallery Setup*/
+.title {
+    z-index: 9999;
+    font-family: 'Pacifico', cursive;
+    position: absolute;
+    padding-top: 80px;
+    left: 40%;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0px 0px 5px  rgba(0, 0, 0, 1);
+}
+
+.description {
+    z-index: 9999;
+    font-family: 'Lora', serif;
+    color: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    padding-top: 145px;
+    left: 40%;
+    text-shadow: 0px 0px 5px  rgba(0, 0, 0, 1);
+}
+
+.main_container {
+    margin-top: 100px;
+}
+
+.image_container {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    width: 70%;
+    margin: 0 auto;
+    border: solid 5px #4da8c7;
+}
+
+.image {
+    z-index: 9997;
+    width: 86%;
+    margin-left:7%;
+    height: 550px;
+    display: block;
+    padding: 1px;
+    overflow: hidden;
+
+}

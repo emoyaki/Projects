@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<articles>
+  <slide>
+    <title>First Slide</title>
+    <description>Description of the first slide</description>
+    <image_url><![CDATA[images/nature/img_1.jpg]]></image_url>
+  </slide>
+    <slide>
+    <title>Second Slide</title>
+    <description>Description of the second slide</description>
+    <image_url><![CDATA[images/nature/img_2.jpg]]></image_url>
+  </slide>
+  <slide>
+    <title>Third Slide</title>
+    <description>Description of the third slide</description>
+    <image_url><![CDATA[images/nature/img_3.jpg]]></image_url>
+  </slide>
+  <slide>
+    <title>Fourth Slide</title>
+    <description>Description of the fourth slide</description>
+    <image_url><![CDATA[images/nature/img_4.jpg]]></image_url>
+  </slide>
+  <slide>
+    <title>Fifth Slide</title>
+    <description>Description of the fifth slide</description>
+    <image_url><![CDATA[images/nature/img_5.jpg]]></image_url>
+  </slide>
+
+</articles>

@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<articles>
+  <slide_nature>
+    <title>First Slide</title>
+    <description>Description of the first slide</description>
+    <image_url><![CDATA[images/nature/img_1.jpg]]></image_url>
+  </slide_nature>
+  <slide_nature>
+    <title>Second Slide</title>
+    <description>Description of the second slide</description>
+    <image_url><![CDATA[images/nature/img_2.jpg]]></image_url>
+  </slide_nature>
+  <slide_nature>
+    <title>Third Slide</title>
+    <description>Description of the third slide</description>
+    <image_url><![CDATA[images/nature/img_3.jpg]]></image_url>
+  </slide_nature>
+  <slide_nature>
+    <title>Fourth Slide</title>
+    <description>Description of the fourth slide</description>
+    <image_url><![CDATA[images/nature/img_4.jpg]]></image_url>
+  </slide_nature>
+  <slide_nature>
+    <title>Fifth Slide</title>
+    <description>Description of the fifth slide</description>
+    <image_url><![CDATA[images/nature/img_5.jpg]]></image_url>
+  </slide_nature>
+
+  <slide_beaches>
+    <title>First Slide</title>
+    <description>Description of the first slide</description>
+    <image_url><![CDATA[images/beaches/img_1.jpg]]></image_url>
+  </slide_beaches>
+  <slide_beaches>
+    <title>Second Slide</title>
+    <description>Description of the second slide</description>
+    <image_url><![CDATA[images/beaches/img_2.jpg]]></image_url>
+  </slide_beaches>
+  <slide_beaches>
+    <title>Third Slide</title>
+    <description>Description of the third slide</description>
+    <image_url><![CDATA[images/beaches/img_3.jpg]]></image_url>
+  </slide_beaches>
+  <slide_beaches>
+    <title>Fourth Slide</title>
+    <description>Description of the fourth slide</description>
+    <image_url><![CDATA[images/beaches/img_4.jpg]]></image_url>
+  </slide_beaches>
+  <slide_beaches>
+    <title>Fifth Slide</title>
+    <description>Description of the fifth slide</description>
+    <image_url><![CDATA[images/beaches/img_5.jpg]]></image_url>
+  </slide_beaches>
+
+  <slide_animals>
+    <title>First Slide</title>
+    <description>Description of the first slide</description>
+    <image_url><![CDATA[images/animals/img_1.jpg]]></image_url>
+  </slide_animals>
+  <slide_animals>
+    <title>Second Slide</title>
+    <description>Description of the second slide</description>
+    <image_url><![CDATA[images/animals/img_2.jpg]]></image_url>
+  </slide_animals>
+  <slide_animals>
+    <title>Third Slide</title>
+    <description>Description of the third slide</description>
+    <image_url><![CDATA[images/animals/img_3.jpg]]></image_url>
+  </slide_animals>
+  <slide_animals>
+    <title>Fourth Slide</title>
+    <description>Description of the fourth slide</description>
+    <image_url><![CDATA[images/animals/img_4.jpg]]></image_url>
+  </slide_animals>
+  <slide_animals>
+    <title>Fifth Slide</title>
+    <description>Description of the fifth slide</description>
+    <image_url><![CDATA[images/animals/img_5.jpg]]></image_url>
+  </slide_animals>
+</articles>
